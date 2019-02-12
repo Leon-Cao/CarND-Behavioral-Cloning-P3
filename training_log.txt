@@ -1,0 +1,45 @@
+(/opt/carnd_p3/behavioral) root@047c026313cf:/home/workspace# python clone_behavior.py 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Loading Data done!
+20152 (160, 320, 3)
+Using TensorFlow backend.
+Configuration model
+clone_behavior.py:180: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(24, (5, 5), strides=(2, 2), activation="relu")`
+  model.add(Conv2D(24,(5,5), subsample=(2,2), activation='relu')) #, kernel_regularizer=regularizers.l2(0.0001)))
+clone_behavior.py:181: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(36, (5, 5), strides=(2, 2), activation="relu")`
+  model.add(Conv2D(36,(5,5), subsample=(2,2), activation='relu'))
+clone_behavior.py:182: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(48, (5, 5), strides=(2, 2), activation="relu")`
+  model.add(Conv2D(48,(5,5), subsample=(2,2), activation='relu'))
+Train on 16121 samples, validate on 4031 samples
+Epoch 1/10
+2019-02-12 17:39:36.894768: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-02-12 17:39:36.894840: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-02-12 17:39:36.894892: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-02-12 17:39:37.026262: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-02-12 17:39:37.026721: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 0000:00:04.0
+Total memory: 11.17GiB
+Free memory: 11.09GiB
+2019-02-12 17:39:37.026787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2019-02-12 17:39:37.026832: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2019-02-12 17:39:37.026863: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0)
+16121/16121 [==============================] - 23s - loss: 0.0237 - val_loss: 0.0165
+Epoch 2/10
+16121/16121 [==============================] - 19s - loss: 0.0204 - val_loss: 0.0157
+Epoch 3/10
+16121/16121 [==============================] - 18s - loss: 0.0186 - val_loss: 0.0172
+Epoch 4/10
+16121/16121 [==============================] - 18s - loss: 0.0174 - val_loss: 0.0175
+Epoch 5/10
+16121/16121 [==============================] - 19s - loss: 0.0158 - val_loss: 0.0195
+Epoch 6/10
+16121/16121 [==============================] - 19s - loss: 0.0140 - val_loss: 0.0207
+Epoch 7/10
+16121/16121 [==============================] - 21s - loss: 0.0124 - val_loss: 0.0215
+Epoch 8/10
+16121/16121 [==============================] - 22s - loss: 0.0108 - val_loss: 0.0234
+Epoch 9/10
+16121/16121 [==============================] - 22s - loss: 0.0091 - val_loss: 0.0219
+Epoch 10/10
+16121/16121 [==============================] - 21s - loss: 0.0080 - val_loss: 0.0226

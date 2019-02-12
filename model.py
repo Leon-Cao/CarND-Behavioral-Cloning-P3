@@ -222,12 +222,11 @@ def CNN_2(model, X_train, y_train):
     Convolution(30x158x24) with relu
     Convolution(13x77x36) with relu
     Convolution(5x37x48) with relu
-    Convolution(3x17x64) with relu
-    Convolution(1x7x64) with relu
-    flatten(448x3)
-    dense(100)
-    dense(50)
-    dense(10)
+    Convolution(1x33x64) with relu
+    flatten(2112x3)
+    dense(120)
+    dense(60)
+    dense(12)
     dense(1)
     '''
     model.add(Cropping2D(cropping=((70,25), (0,0)), input_shape = (160,320, 3))) # 65x320x3
@@ -235,12 +234,11 @@ def CNN_2(model, X_train, y_train):
     model.add(Conv2D(24,(5,5), strides=(2,2), activation='relu')) #, kernel_regularizer=regularizers.l2(0.0001)))
     model.add(Conv2D(36,(5,5), strides=(2,2), activation='relu'))
     model.add(Conv2D(48,(5,5), strides=(2,2), activation='relu'))
-    model.add(Conv2D(64,(3,3), activation='relu'))
-    model.add(Conv2D(64,(3,3), activation='relu'))
+    model.add(Conv2D(64,(5,5), activation='relu'))
     model.add(Flatten())
-    model.add(Dense(100))
-    model.add(Dense(50))
-    model.add(Dense(10))
+    model.add(Dense(120))
+    model.add(Dense(60))
+    model.add(Dense(12))
     model.add(Dense(1))
 
     model.compile(loss='mse', optimizer = 'adam')

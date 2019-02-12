@@ -62,22 +62,20 @@ My model consists of a convolution neural network as below table (clone.py lines
 | RELU				 |												|
 | Convolution 5x5x48 | 5x5 stride(2,2), valid padding, outputs 5x37x48 |
 | RELU				 |												|
-| Convolution 3x3x64 | 3x3 stride(1,1), valid padding, outputs 3x35x64 |
-| RELU				 |												|
-| Convolution 3x3x64 | 3x3 stride(1,1), valid padding, outputs 1x33x64 |
+| Convolution 5x5x64 | 5x5 stride(1,1), valid padding, outputs 1x33x64 |
 | RELU				 |												|
 | Fully connected	 | 1x33x64x3 -> 2112x3 -> 6336 					|
-| Fully connected	 | 6336 -->100.        							|
-| Fully connected	 | 100 -->50.        							|
-| Fully connected	 | 50 -->10.        							|
+| Fully connected	 | 6336 -->120.        							|
+| Fully connected	 | 120 -->60.        							|
+| Fully connected	 | 60 -->12.        							|
 | Fully connected    | 10 --> 1.        							|
 
 The input data is (160x320x3) RBG images, first cropping y-axis on top 70 and bottom 25, then the output images changed to 65x320x3 (code line 233). And the data is normalized from 0~255 to -0.5 to 0.5 (code line 234).
-The model includes 5 Convolution layers with RELU and first 3 layers stride(2,2) (code line 235 - 239), 
-The model also includes 5 fully connected layers. (code line 240 to 244).
+The model includes 4 Convolution layers with RELU and first 3 layers stride(2,2) (code line 232 - 237), 
+The model also includes 5 fully connected layers. (code line 238 to 242).
 
-After that I used keras.compile() with loss='mse', optimizer = 'adam'. (code line 246)
-for fit() funtion, seperated validation set as 20% of training sample. (code line 247)
+After that I used keras.compile() with loss='mse', optimizer = 'adam'. (code line 244)
+for fit() funtion, seperated validation set as 20% of training sample. (code line 245)
 Finally, save the training result as 'model.h5' (code line 248)
 
 #### 2. Attempts to reduce overfitting in the model
@@ -125,22 +123,20 @@ My model consists of a convolution neural network as below table (clone.py lines
 | RELU				 |												|
 | Convolution 5x5x48 | 5x5 stride(2,2), valid padding, outputs 5x37x48 |
 | RELU				 |												|
-| Convolution 3x3x64 | 3x3 stride(1,1), valid padding, outputs 3x35x64 |
-| RELU				 |												|
-| Convolution 3x3x64 | 3x3 stride(1,1), valid padding, outputs 1x33x64 |
+| Convolution 5x5x64 | 5x5 stride(1,1), valid padding, outputs 1x33x64 |
 | RELU				 |												|
 | Fully connected	 | 1x33x64x3 -> 2112x3 -> 6336 					|
-| Fully connected	 | 6336 -->100.        							|
-| Fully connected	 | 100 -->50.        							|
-| Fully connected	 | 50 -->10.        							|
+| Fully connected	 | 6336 -->120.        							|
+| Fully connected	 | 120 -->60.        							|
+| Fully connected	 | 60 -->12.        							|
 | Fully connected    | 10 --> 1.        							|
 
 The input data is (160x320x3) RBG images, first cropping y-axis on top 70 and bottom 25, then the output images changed to 65x320x3 (code line 233). And the data is normalized from 0~255 to -0.5 to 0.5 (code line 234).
-The model includes 5 Convolution layers with RELU and first 3 layers stride(2,2) (code line 235 - 239), 
-The model also includes 5 fully connected layers. (code line 240 to 244).
+The model includes 4 Convolution layers with RELU and first 3 layers stride(2,2) (code line 232 - 237), 
+The model also includes 5 fully connected layers. (code line 238 to 242).
 
-After that I used keras.compile() with loss='mse', optimizer = 'adam'. (code line 246)
-for fit() funtion, seperated validation set as 20% of training sample. (code line 247)
+After that I used keras.compile() with loss='mse', optimizer = 'adam'. (code line 244)
+for fit() funtion, seperated validation set as 20% of training sample. (code line 245)
 Finally, save the training result as 'model.h5' (code line 248)
 
 #### 3. Creation of the Training Set & Training Process
